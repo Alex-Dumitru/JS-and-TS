@@ -1,0 +1,40 @@
+Types:
+
+- we have possibility to define types for variables
+
+let isDone: boolean = false
+let decimal: number = 10
+let name: string = "Alex"
+let posts: number[] = [1,2,3]
+let notSure: any = "hi :)"
+
+Interfaces:
+
+- defines how our data or functionalities should be modeled
+
+Decorators:
+
+- functions that are invoked with a prefixed @ symbol (like in python)
+- they return the same thing that was passed in, but it has been argument in some way
+- we can decorate classes, methods, properties and parameters
+
+tsc --init - to create a new tsconfig.json file (run in CLI in project's dir)
+tsc your_file.ts - to compile the file to JS
+tsc -watch your_file.ts - to start the compilation in watch mode (running process that watches the file for changes and compiles it interactively)
+
+
+Types inference:
+
+let car = {
+    brand: "bmw",
+    engine: 3.4,
+    run: function(){
+        console.log("driving")
+    }
+}
+
+TS will detect the type of the variables you defined, and will assign that specific type to it.
+so if you declared it initially as a string, that var will be a string, etc.
+
+car.brand = 2; -> will give an error
+car.brand = "fiat"; -> this works
