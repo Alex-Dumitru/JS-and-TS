@@ -1,7 +1,11 @@
-"use strict";
 var car;
 var engine;
 var isFast;
 car = "bmw";
 engine = 5.4;
 isFast = true;
+var names;
+names = 12;
+names = "Alex";
+var cars = ["Toyota", "BMW", "Mercedes"];
+cars = ["Nissan"];

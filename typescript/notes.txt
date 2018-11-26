@@ -38,3 +38,67 @@ so if you declared it initially as a string, that var will be a string, etc.
 
 car.brand = 2; -> will give an error
 car.brand = "fiat"; -> this works
+
+
+When writing a function, like this, make sure that you specify the types properly, otherwise it will be 'any' by default
+
+function cal(val1, val2){
+    let total = val1 + val2;
+    return total;
+}
+                                             /-----------this is for return
+function cal(val1: number, val2: number): number{
+    let total = val1 + val2;
+    return total;
+}
+
+
+
+Union types:
+
+- in the case we want to assign only specific types to a variable
+
+let unionType: number | string;
+
+unionType = "String";
+unionType = 123;
+unionType = false; - this should give error
+
+Interfaces:
+
+- a way to describe data, for other objects to use
+
+
+non-null assertion operator
+
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator
+
+see also:
+https://stackoverflow.com/questions/47704652/what-does-exclamation-point-after-variable-mean-in-javascript?noredirect=1&lq=1
+https://stackoverflow.com/questions/42273853/in-typescript-what-is-the-exclamation-mark-bang-operator-when-dereferenci
+
+for errors such as:
+
+[ts] Property 'brand' has no initializer and is not definitely assigned in the constructor. [2564]
+
+in:
+
+class AutomobileClass implements AutomobileInterface{
+
+    brand: string;          ------> highlights with error from above
+    speed!: number;         - no error here
+
+    speedMethod(speed: number){
+        console.log("My car is going at ");
+    }
+
+}
+
+
+
+Creating classes:
+
+when defining input parms for the object, we have 3 access modifier:
+- public - available as an object property (can be accessed from outside)
+- private - defined only inside the object (we cannot access it from outside)
+- protected - cannot use if from outside, but can be inherited 
